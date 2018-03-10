@@ -15,9 +15,9 @@
         <% end %>
     </header>
 
-    <% if flash [:notice] %>
-      <%= flash [:notice] %>
-    <% elsif flash [:success] %>
+    <% if flash[:notice] %>
+      <%= flash[:notice] %>
+    <% elsif flash[:success] %>
       <%= flash[:success] %>
     <% end %>
     <%= yield %>

@@ -5,7 +5,6 @@ class Project < ApplicationRecord
   has_one :address, as: :addressable, dependent: :destroy
 
   validates :name, :description, presence: true
-  validates :name, :uniqueness: true
-
+  validates :name, uniqueness: true
 
 end

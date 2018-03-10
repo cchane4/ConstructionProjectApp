@@ -13,7 +13,7 @@ def create
     flash[:success] = "Welcome back"
     redirect_to projects_path
   else
-    flash [:notice] = "Please try again"
+    flash[:notice] = "Please try again"
     render :new
     end
   end
