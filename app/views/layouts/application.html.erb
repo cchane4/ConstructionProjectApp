@@ -4,14 +4,17 @@
     <title>BuildBetter</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
         <% if current_user %>
+          <%= link_to image_tag('logo.png'), projects_path %>
           <%= link_to "Sign Out", signout_path, method: :delete %>
+        <% else %>
+            <%= link_to image_tag ('logo.png'), root_path %>
         <% end %>
     </header>
 
