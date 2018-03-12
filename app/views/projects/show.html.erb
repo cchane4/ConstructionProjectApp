@@ -6,7 +6,7 @@
 <%= @project.description %>
 <hr>
 <%= @project.address.street %>
-<%= @project.address.city  %>
+<%= @project.address.city %>
 <%= @project.address.state %>
 <%= @project.address.state %>
 <%= @project.address.zip %>
@@ -14,6 +14,19 @@
 <% if current_user.admin? %>
   <%= form_tag project_path(@project), method: "DELETE" do %>
   <%= submit_tag "Remove", data: {confirm: "Are you sure?"} %>
+  <% end %>
+<% end %>
+
+<hr>
+<% if !@project.users.empty? %>
+  <% @project.users.each do |user| %>
+  <%= gravatar_for(user.email) %>
+  <%= user.username %>
+  <%= user.email %>
+  <% if current_user.admin? %>
+  <button> Remove user from project </button>
+  <% end %>
+  <hr>
   <% end %>
 <% end %>
 
