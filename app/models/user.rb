@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_one :address, as: :addressable, dependent: :destroy
 
   validates :username, :email, presence: true, uniqueness: true
-  validates :email, format: { with: /\w@\w/}
+  validates :email, format: { with: /\w@\w/ }
 end

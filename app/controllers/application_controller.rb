@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-    protect_from_forgery with: :exception
+  protect_from_forgery with: :exception
   helper_method :current_user
 
   def current_user
@@ -8,8 +8,6 @@ class ApplicationController < ActionController::Base
   end
 
   def auth_user
-    if current_user.blank?
-      redirect_to root_path
-    end
+    redirect_to root_path if current_user.blank?
   end
 end

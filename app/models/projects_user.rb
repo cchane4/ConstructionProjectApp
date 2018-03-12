@@ -4,6 +4,6 @@ class ProjectsUser < ApplicationRecord
 
   validates :user_id, uniqueness: {
     scope: :project_id,
-    message: "The user is already assigned to the project"
-    }
+    message: 'The user is already assigned to the project'
+  }
 end

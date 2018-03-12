@@ -7,4 +7,5 @@ class Project < ApplicationRecord
   validates :name, :description, presence: true
   validates :name, uniqueness: true
 
+  accepts_nested_attributes_for :address
 end
