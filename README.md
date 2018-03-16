@@ -1,6 +1,6 @@
 # README
 
-Test Users:
+Demo Users:
 email: `admin@example.com` password: `go`
 email: `bob@example.com` password: `go`
 
