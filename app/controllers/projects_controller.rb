@@ -20,6 +20,7 @@ class ProjectsController < ApplicationController
   def show
     @project = if current_user.admin?
                  current_user.company.projects.find(params[:id])
+                 @unassigned_users = current_user.company.users.where.not(id:@project.users.pluck(:id))
                else
                  current_user.projects.find(params[:id])
              end

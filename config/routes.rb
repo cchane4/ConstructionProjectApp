@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :users, only: :create
 
   resources :projects
+
+  resources :projects_users, only: [:create, :destroy]
 end
