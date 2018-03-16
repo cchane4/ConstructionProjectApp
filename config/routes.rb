@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   resources :projects
 
-  resources :projects_users, only: [:create, :destroy]
+  resources :projects_users, only: %i[create destroy]
 end

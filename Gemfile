@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.11'
 gem 'bourbon'
+gem 'httparty'
 gem 'neat'
 
 # Use Capistrano for deployment
@@ -40,6 +41,7 @@ group :development, :test do
   gem 'rspec-rails'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  gem 'dotenv-rails'
   gem 'selenium-webdriver'
 end
 

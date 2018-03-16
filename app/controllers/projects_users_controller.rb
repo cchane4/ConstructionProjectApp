@@ -8,6 +8,6 @@ class ProjectsUsersController < ApplicationController
 
   def destroy
     Project.find(params[:id]).users.delete(User.find(params[:user_id]))
-    redirect_to project_path(params[:id]), notice: "The person was unassigned!"
+    redirect_to project_path(params[:id]), notice: 'The person was unassigned!'
   end
 end
