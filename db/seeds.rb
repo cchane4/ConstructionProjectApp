@@ -21,15 +21,15 @@ admin = User.create(
 project_1 = Project.create(
   name: 'The Tallest Building',
   description: 'Prior to 1998, the tallest building status was determined by the height of the building to the top of its architectural elements',
-  image_url: 'https://placekitten.com/200/201',
+  image_url: 'tallest_building',
   company_id: company.id
 )
 project_1.create_address(street: '123 Main Street', city: 'Rockville', state: 'MD', zip: '20853')
 
 project_2 = Project.create(
   name: 'The Pool',
-  description: 'Prior to 1998, the tallest building status was determined by the height of the building to the top of its architectural elements',
-  image_url: 'https://placekitten.com/200/201',
+  description: 'Swimming pools became popular in Britain in the mid-19th century',
+  image_url: 'pool.jpg',
   company_id: company.id
 )
 
@@ -60,4 +60,6 @@ frank = User.create(
 )
 
 bob.projects << project_1
+bob.projects << project_2
 molly.projects << project_1
+frank.projects << project_2
