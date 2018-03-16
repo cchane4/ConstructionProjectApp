@@ -18,14 +18,14 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = if current_user.admin?
-                 current_user.company.projects.find(params[:id])
-                 @unassigned_users = current_user.company.users.where.not(id: @project.users.pluck(:id))
-               else
-                 @project = current_user.projects.find(params[:id])
-               end
+    if current_user.admin?
+      @project ||= current_user.company.projects.find(params[:id])
+      @unassigned_users = current_user.company.users.where.not(id: @project.users.pluck(:id))
+    else
+      @project ||= current_user.projects.find(params[:id])
+    end
     @weather ||= Weather.get_weather(@project.address.zip)
-            end
+    end
 
   def create
     @project = current_user.company.projecs.new(projects_params)

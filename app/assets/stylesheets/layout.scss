@@ -5,20 +5,29 @@
   margin: auto;
 }
 
-header{
-  img{
+header {
+  img {
     padding: 25px;
   }
-  button{
+  div {
     float: right;
-    margin: 25px;
-   }
+    margin: 35px;
+    letter-spacing: 0.04em;
+    font-weight: 600
+    color: lighten($base-font-color, 15%);
+    a {
+      color: $base-font-color;
+      }
+      a:hover {
+        color: $green;
+      }
+    }
   h1 {
     font-size: 30px;
     text-align: center;
     letter-spacing: 0.07em;
+    }
   }
-}
 
 a, a:hover {
   color: white;
