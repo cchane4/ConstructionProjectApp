@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :sessions, only: :create
   delete :signout, to: 'session#destroy', as: :signout
 
-  get :signup, to: 'user#new', as: :signup
+  get :signup, to: 'users#new', as: :signup
   resources :users, only: :create
 
   resources :projects

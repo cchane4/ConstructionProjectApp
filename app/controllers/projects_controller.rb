@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
                   current_user.company.projects
                 else
                   current_user.projects
-              end
+                end
   end
 
   def new
@@ -25,11 +25,11 @@ class ProjectsController < ApplicationController
       @project ||= current_user.projects.find(params[:id])
     end
     @weather ||= Weather.get_weather(@project.address.zip)
-    end
+  end
 
   def create
-    @project = current_user.company.projecs.new(projects_params)
-    @project.image_url = 'placeholder_projects.photo.jpg'
+    @project = current_user.company.projects.new(project_params)
+    @project.image_url = 'placeholder_project.photo.png'
     if @project.save
       flash[:success] = 'The project was added'
       redirect_to projects_path
@@ -55,7 +55,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    current_user.company.proejcts.find(params[:id]).destroy
+    current_user.company.projects.find(params[:id]).destroy
     redirect_to projects_path, notice: 'The project was deleted!'
   end
 
@@ -67,5 +67,5 @@ class ProjectsController < ApplicationController
       :description,
       address_attributes: %i[street city state zip]
     )
-       end
   end
+end

@@ -1,5 +1,4 @@
-
-  <% if current_user.admin? %>
+ <% if current_user.admin? %>
   <div class="edit">
     <button><%= link_to "Edit Project ", edit_project_path(@project) %></button>
   </div>
@@ -23,24 +22,25 @@
       <div><%= @weather[:temp] %></div>
       <div><%= @weather[:description] %></div>
     </div>
-
 <% end %>
 
 <% if current_user.admin? && @unassigned_users.present? %>
   <div class="add-people">
-  <div> Add people to the project</div>
-    <%= form_tag projects_user_path(@project) do %>
+    <div> Add people to the project</div>
+    <%= form_tag projects_users_path(@project) do %>
       <%= select_tag :user_id, options_from_collection_for_select(@unassigned_users, :id, :username) %>
       <%= submit_tag "Add" %>
-    <% end %>
-  </div>
+     <% end %>
+   </div>
+ <% end %>
+</div>
 
 <hr>
 
 <% if @project.users.present? %>
   <div class="assigned-ppl">
     <h2>People assigned to the project:</h2>
-    <% @project.user.each do |user| %>
+    <% @project.users.each do |user| %>
       <div class="person">
         <%= gravatar_for(user_email) %>
         <div><%= user.username %></div>
@@ -52,7 +52,7 @@
           <% end %>
         <% end %>
       </div>
-    <%end%>
+    <% end %>
   </div>
-<end>
+<% end %>
 
