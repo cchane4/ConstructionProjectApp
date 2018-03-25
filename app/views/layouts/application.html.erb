@@ -10,13 +10,13 @@
 
   <body class="main-wrapper">
     <header>
-        <% if current_user %>
-          <%= link_to image_tag('logo.png'), projects_path %>
-          <div><%= link_to "Sign Out", signout_path, method: :delete %></div>
-          <h1><%= current_user.company.name %></h1>
-        <% else %>
-            <%= link_to image_tag('logo.png'), root_path %>
-        <% end %>
+      <% if current_user %>
+        <%= link_to image_tag('logo.png'), projects_path %>
+        <div><%= link_to "Sign Out", signout_path, method: :delete %></div>
+        <h1><%= current_user.company.name %></h1>
+      <% else %>
+        <%= link_to image_tag('logo.png'), root_path %>
+      <% end %>
     </header>
 
     <% if flash[:notice] %>

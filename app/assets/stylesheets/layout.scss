@@ -1,7 +1,7 @@
 .main-wrapper {
   background-color: $base-background-color;
   @include grid-container;
-  max-width: 1200 px;
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -17,17 +17,17 @@ header {
     color: lighten($base-font-color, 15%);
     a {
       color: $base-font-color;
-      }
-      a:hover {
-        color: $green;
-      }
     }
+    a:hover {
+      color: $green;
+    }
+  }
   h1 {
     font-size: 30px;
     text-align: center;
     letter-spacing: 0.07em;
-    }
   }
+}
 
 a, a:hover {
   color: white;
@@ -38,11 +38,11 @@ a, a:hover {
   margin: auto;
   text-align: center;
 
-.danger:hover {
-  background: $danger;
-}
-
   .left {
     text-align: left;
   }
+}
+
+.danger:hover {
+  background: $danger;
 }

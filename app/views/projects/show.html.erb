@@ -11,7 +11,7 @@
 <% end %>
 
 <div class="project-info">
-  <%= render partial: 'project_info', locals: {project: @project } %>
+  <%= render partial: 'project_info', locals: { project: @project } %>
 </div>
 
 <div class="group">
@@ -42,7 +42,7 @@
     <h2>People assigned to the project:</h2>
     <% @project.users.each do |user| %>
       <div class="person">
-        <%= gravatar_for(user_email) %>
+        <%= gravatar_for(user.email) %>
         <div><%= user.username %></div>
         <div class="email"><%= user.email %></div>
         <% if current_user.admin? %>

@@ -4,12 +4,12 @@ Rails.application.routes.draw do
 
   get :signin, to: 'sessions#new', as: :signin
   resources :sessions, only: :create
-  delete :signout, to: 'session#destroy', as: :signout
+  delete :signout, to: 'sessions#destroy', as: :signout
 
   get :signup, to: 'users#new', as: :signup
   resources :users, only: :create
 
   resources :projects
 
-  resources :projects_users, only: %i[create destroy]
+  resources :projects_users, only: [:create, :destroy]
 end

@@ -1,12 +1,12 @@
 class ProjectsController < ApplicationController
   before_action :auth_user
 
-  def index
-    @projects = if current_user.admin?
-                  current_user.company.projects
-                else
-                  current_user.projects
-                end
+ def index
+    if current_user.admin?
+      @projects = current_user.company.projects
+    else
+      @projects = current_user.projects
+    end
   end
 
   def new
@@ -65,7 +65,7 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(
       :name,
       :description,
-      address_attributes: %i[street city state zip]
+      address_attributes: [:street, :city, :state, :zip]
     )
   end
 end

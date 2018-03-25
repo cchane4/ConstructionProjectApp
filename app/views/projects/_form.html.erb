@@ -1,20 +1,21 @@
-<%= render partial: 'shared/form_errors', locals: { form: @project} %>
+<%= render partial: 'shared/form_errors', locals: { form: @project } %>
+
 <div class="center">
   <%= form_for @project do |f| %>
     <%= f.label :name, nil, class: "left" %>
     <%= f.text_field :name, placeholder: 'Animal Store' %>
     <%= f.label :description, nil, class: "left" %>
-    <%= f.text_area :description, placeholder: 'describe the project' %>
+    <%= f.text_area :description, placeholder: 'describe the project', rows: 8 %>
     <%= f.label :address, nil, class: "left" %>
     <%= f.fields_for :address, @project.address || @project.build_address do |address| %>
-    <%= address.text_field :street, placeholder: 'Rockville' %>
-    <%= f.label :city, nil, class: "left" %>
-    <%= address.text_field :city, placeholder: '123 Main Streen' %>
-    <%= f.label :state, nil, class: "left" %>
-    <%= address.text_field :state, placeholder: 'MD' %>
-    <%= f.label :zip, nil, class: "left" %>
-    <%= address.text_field :zip, placeholder: '20983' %>}
-  <% end %>
+      <%= address.text_field :street, placeholder: '123 Main Street' %>
+      <%= address.label :city, nil, class: "left" %>
+      <%= address.text_field :city, placeholder: 'Baltimore' %>
+      <%= address.label :state, nil, class: "left" %>
+      <%= address.text_field :state, placeholder: 'MD' %>
+      <%= address.label :zip, nil, class: "left" %>
+      <%= address.text_field :zip, placeholder: '20983' %>
+    <% end %>
     <%= f.submit %>
   <% end %>
 </div>
