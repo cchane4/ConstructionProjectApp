@@ -4,7 +4,7 @@ class Weather
     parsed_response = response.parsed_response
     description = parsed_response["weather"][0]["description"]
     temp = to_farenheit(parsed_response["main"]["temp"])
-    { description: description,
+    {description: description,
       temp: temp,
       image: image(description)}
   rescue
@@ -17,11 +17,11 @@ class Weather
 
   def self.image(description)
     if description.include?('rain')
-      'rain.png'
+      "rain.png"
     elsif description.include?('snow')
-      'snow.png'
+      "snow.png"
     else
-      'sun.png'
+      "sun.png"
     end
   end
 end
