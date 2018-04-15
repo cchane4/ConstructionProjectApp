@@ -1,8 +1,9 @@
 # README
+Check it out here: <https://agile-earth-62335.herokuapp.com/>
 
 Demo Users:
-  email: `admin@example.com` password: `go`
-  email: `bob@example.com` password: `go`
+ - email: `admin@example.com` password: `go`
+ - email: `bob@example.com` password: `go`
 
 Development Concepts Used:
 - many to many DB relationship
